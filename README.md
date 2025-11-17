@@ -18,8 +18,8 @@ pnpm install
 # Generar entidades Prisma
 pnpm prisma generate
 
-# Migrar los cambios a la base de datos
-pnpm prisma migrate dev
+# Sincronizar con la base de datos
+pnpm prisma db push
 
 pnpm start
 
