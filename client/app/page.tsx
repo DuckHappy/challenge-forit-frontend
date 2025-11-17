@@ -32,7 +32,7 @@ export default function HomePage() {
   useEffect (() => {
     const fetchTasks = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/tasks`,{});
+        const res = await fetch(`http://localhost:4000/api/tasks`,{});
         if (!res.ok) throw new Error("No se pudieron obtener las tareas");
 
         const data = await res.json();
@@ -54,7 +54,7 @@ export default function HomePage() {
         return;
       }
 
-      const res = await fetch(`http://localhost:3000/api/tasks`, {
+      const res = await fetch(`http://localhost:4000/api/tasks`, {
         method: "POST",
         mode: 'cors',
         headers: { "Content-Type": "application/json" },
@@ -81,7 +81,7 @@ export default function HomePage() {
 
   const updateTask = async (id: string, data: UpdatedTask) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+      const res = await fetch(`http://localhost:4000/api/tasks/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   const deleteTask = async (id: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+      const res = await fetch(`http://localhost:4000/api/tasks/${id}`, {
         method: "DELETE",
       });
 
